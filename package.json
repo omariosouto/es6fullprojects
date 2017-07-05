@@ -2,12 +2,12 @@
   "name": "nodereactapi",
   "version": "1.0.0",
   "description": "",
-  "main": "./server/dist/bin/www.js",
+  "main": "./server/dist/bin/www",
   "scripts": {
-    "start": "node ./server/dist/bin/www.js",
-    "start:dev": "nodemon ./server/app/bin/www.js --exec babel-node --presets latest",
-    "build": "rm -rf ./server/dist && babel ./server/app --out-dir ./server/dist --copy-files",
-    "build:start": "npm run build && npm start"
+    "start": "export NODE_ENV=production && npm run build && node ./server/dist/www",
+    "start:dev": "export NODE_ENV=development && webpack --watch",
+    "start:devserver": "nodemon --ignore public/ --exec babel-node -- ./server/dist/www",
+    "build": "NODE_ENV=production webpack -p"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +33,10 @@
     "nodemon": "^1.11.0",
     "standard": "^10.0.2",
     "standard-loader": "^6.0.1",
-    "webpack": "^3.0.0"
+    "webpack": "^3.0.0",
+    "webpack-dashboard": "^0.4.0",
+    "webpack-livereload-plugin": "^0.11.0",
+    "webpack-node-externals": "^1.6.0",
+    "webpack-shell-plugin": "^0.5.0"
   }
 }
