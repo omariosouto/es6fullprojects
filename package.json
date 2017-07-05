@@ -1,0 +1,38 @@
+{
+  "name": "nodereactapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/dist/bin/www.js",
+  "scripts": {
+    "start": "node ./server/dist/bin/www.js",
+    "start:dev": "nodemon ./server/app/bin/www.js --exec babel-node --presets latest",
+    "build": "rm -rf ./server/dist && babel ./server/app --out-dir ./server/dist --copy-files",
+    "build:start": "npm run build && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "config": "^1.26.1",
+    "debug": "^2.6.8",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "moment": "^2.18.1",
+    "mysql": "^2.13.0",
+    "prop-types": "^15.5.10",
+    "ramda": "^0.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.11.0",
+    "standard": "^10.0.2",
+    "standard-loader": "^6.0.1",
+    "webpack": "^3.0.0"
+  }
+}
