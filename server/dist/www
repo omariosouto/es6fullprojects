@@ -77,9 +77,9 @@ const Server = __WEBPACK_IMPORTED_MODULE_0__index_js__["a" /* default */].listen
   let host = Server.address().address
   let port = Server.address().port
 
-  console.log('Env', "production")
+  console.log('Env', process.env.NODE_ENV)
 
-  let ambient =  false ? 'development' : 'production'
+  let ambient = process.env.NODE_ENV !== 'production' ? 'development' : 'production'
 
   console.log(`Example app running on ${ambient} listening at http://${host}:${port}`)
 })

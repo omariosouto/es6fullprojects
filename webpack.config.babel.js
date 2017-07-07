@@ -37,7 +37,7 @@ const client = {
 		]
 	},
   plugins: [
-    new LiveReloadPlugin()
+    new LiveReloadPlugin()    
   ]
 }
 
